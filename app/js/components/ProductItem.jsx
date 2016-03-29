@@ -1,13 +1,13 @@
 var React = require('react');
 
 var ProductItem = React.createClass({
-  
+        
     render: function () {
         return ( <div className="col-sm-6 col-md-4 col-lg-3" data-toggle="animation-appear" style={{"padding": "5px !important"}} data-animation-className="animation-fadeInQuick" data-element-offset="-100">
                                     <div className="store-item" data-action="openProductModalDetails">
                                         <div className="store-item-image">
                                             <a href="#">
-                                                <img  alt="" height="480" className="img-responsive" />
+                                                <img src={this.props.url} alt="" height="480" className="img-responsive" />
                                             </a>
                                         </div>
                                         <div className="store-item-info clearfix" style={{"font-size": "12px", "height": "120px"}}>

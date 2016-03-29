@@ -37,13 +37,13 @@ module.exports = ProductGrid;
 var React = require('react');
 
 var ProductItem = React.createClass({displayName: "ProductItem",
-  
+        
     render: function () {
         return ( React.createElement("div", {className: "col-sm-6 col-md-4 col-lg-3", "data-toggle": "animation-appear", style: {"padding": "5px !important"}, "data-animation-className": "animation-fadeInQuick", "data-element-offset": "-100"}, 
                                     React.createElement("div", {className: "store-item", "data-action": "openProductModalDetails"}, 
                                         React.createElement("div", {className: "store-item-image"}, 
                                             React.createElement("a", {href: "#"}, 
-                                                React.createElement("img", {alt: "", height: "480", className: "img-responsive"})
+                                                React.createElement("img", {src: this.props.url, alt: "", height: "480", className: "img-responsive"})
                                             )
                                         ), 
                                         React.createElement("div", {className: "store-item-info clearfix", style: {"font-size": "12px", "height": "120px"}}, 
