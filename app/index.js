@@ -11,7 +11,7 @@ var ProductGrid= React.createClass({displayName: "ProductGrid",
     
      componentWillMount: function() {
         $.ajax({
-          url: "//catalogue.marketoi.com/index.php/api/Front/products?user_id=null&device_id=5xJpgutpmDvhCsFMQ&limit=20&offset=20&time_illico=1458598834653",
+          url: "http://catalogue.marketoi.com/index.php/api/Front/products?user_id=null&device_id=5xJpgutpmDvhCsFMQ&limit=20&offset=20&time_illico=1458598834653",
           dataType: 'json',
           cache: false,
           success: function(data) {
@@ -24,7 +24,7 @@ var ProductGrid= React.createClass({displayName: "ProductGrid",
       }, 
     
     render: function () {
-        console.log(this.state.listProduct.length);
+
         return(React.createElement("div", {className: "customGrid"}, 
         this.state.listProduct.map(function(pro) {
             return  React.createElement(ProductItem, {amount: pro.amount, unit: pro.unit, price: pro.price, label: pro.shops_label, url: pro.icon_path, name: pro.name});
@@ -37,17 +37,13 @@ module.exports = ProductGrid;
 var React = require('react');
 
 var ProductItem = React.createClass({displayName: "ProductItem",
-    
-    
-    
-    
-    
+  
     render: function () {
         return ( React.createElement("div", {className: "col-sm-6 col-md-4 col-lg-3", "data-toggle": "animation-appear", style: {"padding": "5px !important"}, "data-animation-className": "animation-fadeInQuick", "data-element-offset": "-100"}, 
                                     React.createElement("div", {className: "store-item", "data-action": "openProductModalDetails"}, 
                                         React.createElement("div", {className: "store-item-image"}, 
                                             React.createElement("a", {href: "#"}, 
-                                                React.createElement("img", {src: this.props.url, alt: "", height: "480", className: "img-responsive"})
+                                                React.createElement("img", {alt: "", height: "480", className: "img-responsive"})
                                             )
                                         ), 
                                         React.createElement("div", {className: "store-item-info clearfix", style: {"font-size": "12px", "height": "120px"}}, 

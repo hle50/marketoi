@@ -23,7 +23,7 @@ var ProductGrid= React.createClass({displayName: "ProductGrid",
       }, 
     
     render: function () {
-        console.log(this.state.listProduct.length);
+
         return(React.createElement("div", {className: "customGrid"}, 
         this.state.listProduct.map(function(pro) {
             return  React.createElement(ProductItem, {amount: pro.amount, unit: pro.unit, price: pro.price, label: pro.shops_label, url: pro.icon_path, name: pro.name});
