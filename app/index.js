@@ -11,7 +11,7 @@ var ProductGrid= React.createClass({displayName: "ProductGrid",
     
      componentWillMount: function() {
         $.ajax({
-          url: "http://catalogue.marketoi.com/index.php/api/Front/products?user_id=null&device_id=5xJpgutpmDvhCsFMQ&limit=20&offset=20&time_illico=1458598834653",
+          url: "catalogue.marketoi.com/index.php/api/Front/products?user_id=null&device_id=5xJpgutpmDvhCsFMQ&limit=20&offset=20&time_illico=1458598834653",
           dataType: 'json',
           cache: false,
           success: function(data) {
