@@ -4,7 +4,7 @@ var Aside = require('./Aside');
 var Search = require('./Search');
 var Cart = require('./Cart');
 var ProductGrid = require('./ProductGrid');
-var App = React.createClass({displayName: "App",
+var App = React.createClass({
 
     offset: 0,
     limit: 20,
@@ -53,21 +53,21 @@ var App = React.createClass({displayName: "App",
         }
     },
     render: function () {
-        return (  React.createElement("div", null, 
-                React.createElement(Header, null), 
-                React.createElement(Search, null), 
-                React.createElement("section", {className: "site-content site-section"}, 
-                    React.createElement("div", {className: "container"}, 
-                        React.createElement("div", {className: "row"}, 
-                            React.createElement(Aside, null), 
-                            React.createElement(ProductGrid, {isLoading: this.state.isLoading, 
-                                         listProduct: this.state.listProduct}), 
-                            React.createElement(Cart, null)
-                        )
-                    )
-                )
-            )
+        return (  <div>
+                <Header></Header>
+                <Search></Search>
+                <section className="site-content site-section">
+                    <div className="container">
+                        <div className="row">
+                            <Aside></Aside>
+                            <ProductGrid isLoading={this.state.isLoading}
+                                         listProduct={this.state.listProduct}></ProductGrid>
+                            <Cart></Cart>
+                        </div>
+                    </div>
+                </section>
+            </div>
         );
     }
 });
-React.render(React.createElement(App, null), document.getElementById('page-container'));
+React.render(<App/>, document.getElementById('page-container'));

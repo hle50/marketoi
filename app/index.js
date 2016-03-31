@@ -1062,6 +1062,7 @@ var App = React.createClass({displayName: "App",
         };
     },
     getData: function () {
+        this.setState({isLoading: true});
         $.ajax({
             url: "http://catalogue.marketoi.com/index.php/api/Front/products",
             data: $.param({
@@ -1090,7 +1091,7 @@ var App = React.createClass({displayName: "App",
         window.removeEventListener('scroll', this.handleScroll);
         this.getData();
     },
-    componentDidMount() {
+    componentDidMount: function() {
         window.addEventListener('scroll', this.handleScroll);
     },
     handleScroll: function (e) {
