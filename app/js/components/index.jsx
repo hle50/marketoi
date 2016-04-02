@@ -4,6 +4,7 @@ var Aside = require('./Aside');
 var Search = require('./Search');
 var Cart = require('./Cart');
 var ProductGrid = require('./ProductGrid');
+var InfiniteScroll = require('./InfiniteScroll');
 var App = React.createClass({
 
     offset: 0,
@@ -11,12 +12,12 @@ var App = React.createClass({
     getInitialState: function () {
         return {
             listProduct: [],
-            isLoading: true
+
         };
     },
     getData: function () {
-        this.setState({isLoading: true});
-        $.ajax({
+
+       return $.ajax({
             url: "http://catalogue.marketoi.com/index.php/api/Front/products",
             data: $.param({
                 user_id: null,
@@ -41,17 +42,9 @@ var App = React.createClass({
     },
 
     componentWillMount: function () {
-        window.removeEventListener('scroll', this.handleScroll);
         this.getData();
     },
-    componentDidMount: function() {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    handleScroll: function (e) {
-        if (window.scrollY + window.innerHeight > this.getDOMNode().scrollHeight - 50) {
-            this.getData();
-        }
-    },
+
     render: function () {
         return (  <div>
                 <Header></Header>
@@ -60,8 +53,10 @@ var App = React.createClass({
                     <div className="container">
                         <div className="row">
                             <Aside></Aside>
-                            <ProductGrid isLoading={this.state.isLoading}
-                                         listProduct={this.state.listProduct}></ProductGrid>
+                            <InfiniteScroll listProduct={this.state.listProduct}
+                                            fetchDataCallback={this.getData}
+                                            delegate={<ProductGrid listProduct={this.state.listProduct}/>}/>
+
                             <Cart></Cart>
                         </div>
                     </div>
