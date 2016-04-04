@@ -1,41 +1,81 @@
 var React = require('react');
 
-var Header = React.createClass({
-        
+var Search = React.createClass({
+
+    getInitialState: function(){
+        return { searchString: '' };
+    },
+    handleChange: function(event){
+       this.setState({searchString: event.target.value});
+        this.props.handleSearch(this.state.searchString);
+    },
+
     render: function () {
         return (
-                    <header>
-            <div>
-                <div className="col-xs-12 col-md-12 header-bar-section">
-                    <a href="/shoppingCart" className="pull-right cartIconHeader">
-                        <i className="shopping-cart-icon header"></i>
-                        <span className="label label-primary label-indicator top-right-number-notification
- animation-floating cartItemsCount">0</span>
-                    </a>
-                    <nav className="site-navigation-bar">
-                        <a href="javascript:void(0)" className="btn btn-default site-menu-toggle visible-xs visible-sm">
-                            <i className="fa fa-bars"></i>
-                        </a>
-                        <ul className="site-nav">
-                            <li className="visible-xs visible-sm">
-                                <a href="javascript:void(0)" className="site-menu-toggle text-center">
-                                    <i className="fa fa-times"></i>
-                                </a>
+            <section className="site-section site-section-light site-section-top">
+            <div className="container text-center" style={{"padding-right": "0px"}}>
+                <div className="mobile-bar search-mobile-section">
+                    <div className="pull-right">
+                        <ul id="iconRightUL">
+                            <li className="shopinfo">
+                                <div className="shopper-icon-section">
+                                    <i className="top-deliver-icon"></i>
+                                </div>
+                                <div style={{"font-size": "12px"}} className="text-logo">
+                                    <span className="shoppernumber">  1 shopper</span>
+                                </div>
                             </li>
-                            <li><a href="/about">About</a></li>
-                            <li><a href="#">Support: 0126.449.2309</a></li>
-                            <li><a href="http://apply.marketoi.com">Become a shopper</a></li>
-
-                            <li><a href="/sign-in" className="log-in-option">Log In</a></li>
-                            <li><a href="/sign-up" className="log-in-option">Sign Up</a></li>
-
+                            <li className="location">
+                                <i className="glyphicon glyphicon-map-marker"></i>
+                                <span>D1</span>
+                            </li>
+                            <li className="time">
+                                <i className="glyphicon glyphicon-time"></i>
+                                <span>lllico</span>
+                            </li>
                         </ul>
-                    </nav>
-                    <a className="site-logo"><span className="main-logo"></span></a>
+                    </div>
+                    <div className="pull-left search-group-section">
+                        <div className="input-group input-group-lg search-group">
+                            <span className="hiddenSearch"></span>
+                            <input type="text" id="productSearchBar" className="form-control productSearchBar productSearchBarWidth" placeholder="Search products" />
+                        </div>
+                    </div>
+                </div>
+                <div className="desktop-only search-desktop-section">
+                
+                    <div className="pull-right">
+                        <ul id="iconRightUL">
+                            <li className="shopinfo">
+                                <div className="shopper-icon-section">
+                                    <i className="top-deliver-icon"></i>
+                                </div>
+                                <div style={{"height": "13px"}} className="text-logo">
+
+                                    <span className="shoppernumber"> 1 shopper</span>
+
+                                </div>
+                            </li>   
+                            <li className="location">
+                                <i className="glyphicon glyphicon-map-marker"></i>
+                                <span>D1</span>
+                            </li>
+                            <li className="time">
+                                <i className="glyphicon glyphicon-time"></i>
+                                <span>lllico</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="pull-left search-group-section">
+                        <div className="input-group input-group-lg search-group">
+                            <span className="hiddenSearch"></span>
+                            <input onChange={this.handleChange} value={this.state.searchString} type="text" id="productSearchBar" className="form-control productSearchBar" placeholder="Search products.."/>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </header>
+        </section>
         );
     }
 });
-module.exports = Header;
+module.exports = Search;
