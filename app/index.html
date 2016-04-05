@@ -6,193 +6,24 @@
     <title>MarketOI</title>
     <meta name="Author" content="" />
     <link rel="stylesheet" type="text/css" href="css/site/site.css" />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<style>
+    .item-border{
+        border-bottom: 1px solid #DDDDDD;
+        padding-left: 5px;
+        padding-right: 0px;
+    }
+    .add-to-cart-btn{
+        position: absolute;
+        right: 0px;
+        top: 30%;
+    }
+</style>
 </head>
 
 <body>
 
     <div id="page-container">
-
-       
-
-<!--
-
-        <section class="site-section site-section-location">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2">
-                    </div>
-                    <div class="col-md-7">
-                        <div class="col-md-5 first-message">
-
-                        </div>
-                        <div class="col-md-2 ajax-loading-product">
-
-                        </div>
-                        <div class="col-md-5 first-message">
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 desktop-only" style="padding-top: 14px">
-                        <span class="mini-cart-title">CART</span>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="container text-center">
-                <div class="col-xs-0 col-md-2"></div>
-                <div class="col-xs-12 col-md-8">
-                    <div id="categoriesSilder" class="slick-initialized slick-slider">
-                        <div aria-live="polite" class="slick-list draggable" tabindex="0">
-                            <div class="slick-track" style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px);">
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="-5" aria-hidden="true">
-                                    <a href="/cat/35">
-                                        <img src="http://catalo.marketoi.com/icones/gourmet.png" style="margin: auto" width="20px" alt="">
-                                        <span>gourmet</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="-4" aria-hidden="true">
-                                    <a href="/cat/36">
-                                        <img src="http://catalo.marketoi.com/icones/condiment.png" style="margin: auto" width="20px" alt="">
-                                        <span>condiments</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="-3" aria-hidden="true">
-                                    <a href="/cat/37">
-                                        <img src="http://catalo.marketoi.com/icones/basefood.png" style="margin: auto" width="20px" alt="">
-                                        <span>base food</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="-2" aria-hidden="true">
-                                    <a href="/cat/39">
-                                        <img src="" style="margin: auto" width="20px" alt="">
-                                        <span>creamery</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="-1" aria-hidden="true">
-                                    <a href="/cat/40">
-                                        <img src="" style="margin: auto" width="20px" alt="">
-                                        <span>tea/coffee</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-active" style="width: 0px;" data-slick-index="0" aria-hidden="false">
-                                    <a href="/cat/1">
-                                        <img src="http://catalo.marketoi.com/icones/food.png" style="margin: auto" width="20px" alt="">
-                                        <span>food</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-active" style="width: 0px;" data-slick-index="1" aria-hidden="false">
-                                    <a href="/cat/2">
-                                        <img src="http://catalo.marketoi.com/icones/drink.png" style="margin: auto" width="20px" alt="">
-                                        <span>drinks</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-active" style="width: 0px;" data-slick-index="2" aria-hidden="false">
-                                    <a href="/cat/3">
-                                        <img src="http://catalo.marketoi.com/icones/housecare.png" style="margin: auto" width="20px" alt="">
-                                        <span>home essentials</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-active" style="width: 0px;" data-slick-index="3" aria-hidden="false">
-                                    <a href="/cat/5">
-                                        <img src="http://catalo.marketoi.com/icones/snack.png" style="margin: auto" width="20px" alt="">
-                                        <span>snack</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-active" style="width: 0px;" data-slick-index="4" aria-hidden="false">
-                                    <a href="/cat/10">
-                                        <img src="http://catalo.marketoi.com/icones/bakery.png" style="margin: auto" width="20px" alt="">
-                                        <span>bakery</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide" style="width: 0px;" data-slick-index="5" aria-hidden="true">
-                                    <a href="/cat/11">
-                                        <img src="http://catalo.marketoi.com/icones/meat.png" style="margin: auto" width="20px" alt="">
-                                        <span>butcher</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide" style="width: 0px;" data-slick-index="6" aria-hidden="true">
-                                    <a href="/cat/32">
-                                        <img src="http://catalo.marketoi.com/icones/streetfood.png" style="margin: auto" width="20px" alt="">
-                                        <span>restaurant</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide" style="width: 0px;" data-slick-index="7" aria-hidden="true">
-                                    <a href="/cat/35">
-                                        <img src="http://catalo.marketoi.com/icones/gourmet.png" style="margin: auto" width="20px" alt="">
-                                        <span>gourmet</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide" style="width: 0px;" data-slick-index="8" aria-hidden="true">
-                                    <a href="/cat/36">
-                                        <img src="http://catalo.marketoi.com/icones/condiment.png" style="margin: auto" width="20px" alt="">
-                                        <span>condiments</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide" style="width: 0px;" data-slick-index="9" aria-hidden="true">
-                                    <a href="/cat/37">
-                                        <img src="http://catalo.marketoi.com/icones/basefood.png" style="margin: auto" width="20px" alt="">
-                                        <span>base food</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide" style="width: 0px;" data-slick-index="10" aria-hidden="true">
-                                    <a href="/cat/39">
-                                        <img src="" style="margin: auto" width="20px" alt="">
-                                        <span>creamery</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide" style="width: 0px;" data-slick-index="11" aria-hidden="true">
-                                    <a href="/cat/40">
-                                        <img src="" style="margin: auto" width="20px" alt="">
-                                        <span>tea/coffee</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="12" aria-hidden="true">
-                                    <a href="/cat/1">
-                                        <img src="http://catalo.marketoi.com/icones/food.png" style="margin: auto" width="20px" alt="">
-                                        <span>food</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="13" aria-hidden="true">
-                                    <a href="/cat/2">
-                                        <img src="http://catalo.marketoi.com/icones/drink.png" style="margin: auto" width="20px" alt="">
-                                        <span>drinks</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="14" aria-hidden="true">
-                                    <a href="/cat/3">
-                                        <img src="http://catalo.marketoi.com/icones/housecare.png" style="margin: auto" width="20px" alt="">
-                                        <span>home essentials</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="15" aria-hidden="true">
-                                    <a href="/cat/5">
-                                        <img src="http://catalo.marketoi.com/icones/snack.png" style="margin: auto" width="20px" alt="">
-                                        <span>snack</span>
-                                    </a>
-                                </div>
-                                <div class="slick-slide slick-cloned" style="width: 0px;" data-slick-index="16" aria-hidden="true">
-                                    <a href="/cat/10">
-                                        <img src="http://catalo.marketoi.com/icones/bakery.png" style="margin: auto" width="20px" alt="">
-                                        <span>bakery</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" data-role="none" class="slick-prev" aria-label="previous" style="display: block;">Previous</button>
-                        <button type="button" data-role="none" class="slick-next" aria-label="next" style="display: block;">Next</button>
-                    </div>
-                </div>
-                <div class="col-xs-0 col-md-2"></div>
-            </div>
-
-        </section>
--->
-
-       
-  
 
     </div>
     <script src="css/lib/jquery/dist/jquery.min.js"></script>

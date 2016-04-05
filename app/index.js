@@ -1070,9 +1070,9 @@ var React = require('react');
 var ProductItem = React.createClass({displayName: "ProductItem",
 
         render: function () {
-            return (React.createElement("div", {className: "col-sm-6 col-md-4 col-lg-3", 
+            return (React.createElement("div", {className: "col-xs-12 col-sm-6 col-md-4 col-lg-3", 
                          style: {"padding": "5px !important"}}, 
-                    React.createElement("div", {onClick: this.props.openModal, className: "store-item"}, 
+                    React.createElement("div", {onClick: this.props.openModal, className: "store-item hidden-xs hidden-sm"}, 
                         React.createElement("div", {className: "store-item-image"}, 
 
                             React.createElement("img", {src: this.props.url, alt: "", height: "480", className: "img-responsive"})
@@ -1096,7 +1096,29 @@ var ProductItem = React.createClass({displayName: "ProductItem",
                                 React.createElement("span", {className: "store-item-price themed-color-dark"}, this.props.price)
                             )
                         )
+                    ), 
+                React.createElement("div", {className: "col-xs-12 hidden-lg hidden-md item-border"}, 
+                     React.createElement("div", {className: "col-xs-2"}, 
+                         React.createElement("img", {src: this.props.url, alt: "", width: "50px", className: ""})
+                     ), 
+                    React.createElement("div", {className: "col-xs-8"}, 
+                        React.createElement("span", {className: "product-name"}, 
+                            React.createElement("strong", null, this.props.name)
+                        ), 
+                         React.createElement("span", {className: "container-of-amount"}, 
+                                    React.createElement("a", {href: "#", className: "text-muted"}, this.props.amount, " ", this.props.unit)
+                                ), 
+                                React.createElement("span", {className: "container-of-amount"}, 
+                                    React.createElement("a", {href: "#", className: "text-muted"}, this.props.label)
+                                ), 
+                        React.createElement("span", {className: "store-item-price themed-color-dark"}, this.props.price)
+                    ), 
+                    React.createElement("div", {className: "col-xs-2"}, 
+                        React.createElement("button", {className: "btn btn-sm btn-default add-to-cart-btn"}, 
+                            React.createElement("i", {className: "fa fa-plus"})
+                        )
                     )
+                )
                 )
             );
         }
@@ -10907,6 +10929,10 @@ var ReactEmptyComponentInjection = {
   }
 };
 
+function registerNullComponentID() {
+  ReactEmptyComponentRegistry.registerNullComponentID(this._rootNodeID);
+}
+
 var ReactEmptyComponent = function (instantiate) {
   this._currentElement = null;
   this._rootNodeID = null;
@@ -10915,7 +10941,7 @@ var ReactEmptyComponent = function (instantiate) {
 assign(ReactEmptyComponent.prototype, {
   construct: function (element) {},
   mountComponent: function (rootID, transaction, context) {
-    ReactEmptyComponentRegistry.registerNullComponentID(rootID);
+    transaction.getReactMountReady().enqueue(registerNullComponentID, this);
     this._rootNodeID = rootID;
     return ReactReconciler.mountComponent(this._renderedComponent, rootID, transaction, context);
   },
@@ -15221,7 +15247,7 @@ module.exports = ReactUpdates;
 
 'use strict';
 
-module.exports = '0.14.7';
+module.exports = '0.14.8';
 },{}],93:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -23967,8 +23993,9 @@ var Portal = _react2['default'].createClass({
 
   componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
     if (this._overlayTarget && nextProps.container !== this.props.container) {
-      this.getContainerDOMNode().removeChild(this._overlayTarget);
-      this.getContainerDOMNode(nextProps).appendChild(this._overlayTarget);
+      this._portalContainerNode.removeChild(this._overlayTarget);
+      this._portalContainerNode = _utilsGetContainer2['default'](nextProps.container, _utilsOwnerDocument2['default'](this).body);
+      this._portalContainerNode.appendChild(this._overlayTarget);
     }
   },
 
@@ -23980,15 +24007,17 @@ var Portal = _react2['default'].createClass({
   _mountOverlayTarget: function _mountOverlayTarget() {
     if (!this._overlayTarget) {
       this._overlayTarget = document.createElement('div');
-      this.getContainerDOMNode().appendChild(this._overlayTarget);
+      this._portalContainerNode = _utilsGetContainer2['default'](this.props.container, _utilsOwnerDocument2['default'](this).body);
+      this._portalContainerNode.appendChild(this._overlayTarget);
     }
   },
 
   _unmountOverlayTarget: function _unmountOverlayTarget() {
     if (this._overlayTarget) {
-      this.getContainerDOMNode().removeChild(this._overlayTarget);
+      this._portalContainerNode.removeChild(this._overlayTarget);
       this._overlayTarget = null;
     }
+    this._portalContainerNode = null;
   },
 
   _renderOverlay: function _renderOverlay() {
@@ -24035,12 +24064,8 @@ var Portal = _react2['default'].createClass({
     }
 
     return null;
-  },
-
-  getContainerDOMNode: function getContainerDOMNode(props) {
-    props = props || this.props;
-    return _utilsGetContainer2['default'](props.container, _utilsOwnerDocument2['default'](this).body);
   }
+
 });
 
 exports['default'] = Portal;
