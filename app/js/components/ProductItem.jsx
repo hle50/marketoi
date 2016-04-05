@@ -3,7 +3,7 @@ var React = require('react');
 var ProductItem = React.createClass({
 
         render: function () {
-            return (<div className="col-xs-12 col-sm-6 col-md-4 col-lg-3"
+            return (<div className="col-xs-12 col-sm-12 col-md-4 col-lg-3"
                          style={{"padding": "5px !important"}}>
                     <div onClick={this.props.openModal} className="store-item hidden-xs hidden-sm">
                         <div className="store-item-image">

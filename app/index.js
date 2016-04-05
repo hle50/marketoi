@@ -863,48 +863,8 @@ var Cart = React.createClass({displayName: "Cart",
 module.exports = Cart;
 
 },{"react":408}],3:[function(require,module,exports){
-var React = require('react');
 
-var Header = React.createClass({displayName: "Header",
-        
-    render: function () {
-        return (
-                    React.createElement("header", null, 
-            React.createElement("div", null, 
-                React.createElement("div", {className: "col-xs-12 col-md-12 header-bar-section"}, 
-                    React.createElement("a", {href: "/shoppingCart", className: "pull-right cartIconHeader"}, 
-                        React.createElement("i", {className: "shopping-cart-icon header"}), 
-                        React.createElement("span", {className: "label label-primary label-indicator top-right-number-notification" + ' ' +
- "animation-floating cartItemsCount"}, "0")
-                    ), 
-                    React.createElement("nav", {className: "site-navigation-bar"}, 
-                        React.createElement("a", {href: "javascript:void(0)", className: "btn btn-default site-menu-toggle visible-xs visible-sm"}, 
-                            React.createElement("i", {className: "fa fa-bars"})
-                        ), 
-                        React.createElement("ul", {className: "site-nav"}, 
-                            React.createElement("li", {className: "visible-xs visible-sm"}, 
-                                React.createElement("a", {href: "javascript:void(0)", className: "site-menu-toggle text-center"}, 
-                                    React.createElement("i", {className: "fa fa-times"})
-                                )
-                            ), 
-                            React.createElement("li", null, React.createElement("a", {href: "/about"}, "About")), 
-                            React.createElement("li", null, React.createElement("a", {href: "#"}, "Support: 0126.449.2309")), 
-                            React.createElement("li", null, React.createElement("a", {href: "http://apply.marketoi.com"}, "Become a shopper")), 
-
-                            React.createElement("li", null, React.createElement("a", {href: "/sign-in", className: "log-in-option"}, "Log In")), 
-                            React.createElement("li", null, React.createElement("a", {href: "/sign-up", className: "log-in-option"}, "Sign Up"))
-
-                        )
-                    ), 
-                    React.createElement("a", {className: "site-logo"}, React.createElement("span", {className: "main-logo"}))
-                )
-            )
-        )
-        );
-    }
-});
-module.exports = Header;
-},{"react":408}],4:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var React = require('React');
 var InfiniteScroll = React.createClass({displayName: "InfiniteScroll",
     isLoading: false,
