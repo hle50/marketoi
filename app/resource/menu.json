@@ -1,0 +1,131 @@
+{
+  "result": [
+    {
+      "name": "Selection",
+      "link": "",
+      "img": "",
+      "children": [
+        {
+          "name": "History",
+          "link": "",
+          "img": ""
+        },
+        {
+          "name": "New",
+          "link": "",
+          "img": ""
+        },
+        {
+          "name": "Best Seller",
+          "link": "",
+          "img": ""
+        }
+      ]
+    },
+    {
+      "name": "Departments",
+      "link": "",
+      "img": "",
+      "children": [
+        {
+          "name": "Food",
+          "link": "",
+          "img": "",
+          "children": [
+            {
+              "name": "Snack",
+              "link": "",
+              "img": ""
+            },
+            {
+              "name": "Bakery",
+              "link": "",
+              "img": ""
+            },
+            {
+              "name": "Butcher",
+              "link": "",
+              "img": ""
+            },
+            {
+              "name": "Gourmet",
+              "link": "",
+              "img": ""
+            },
+            {
+              "name": "Condiments",
+              "link": "",
+              "img": ""
+            },
+            {
+              "name": "Base Food",
+              "link": "",
+              "img": "",
+              "children": [
+                {
+                  "name": "Creamery",
+                  "link": "",
+                  "img": ""
+                },
+                {
+                  "name": "Tea/Coffee",
+                  "link": "",
+                  "img": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Drink",
+          "link": "",
+          "img": "",
+          "children": [
+            {
+              "name": "Soda",
+              "link": "",
+              "img": ""
+            },
+            {
+              "name": "Water/Milk",
+              "link": "",
+              "img": ""
+            },
+            {
+              "name": "Beer",
+              "link": "",
+              "img": ""
+            },
+            {
+              "name": "Wine",
+              "link": "",
+              "img": ""
+            },
+            {
+              "name": "Spirits",
+              "link": "",
+              "img": "",
+              "children": [
+                {
+                  "name": "Juice",
+                  "link": "",
+                  "img": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Home Essentials",
+          "link": "",
+          "img": ""
+        },
+        {
+          "name": "Shop",
+          "link": "",
+          "img": ""
+        },
+      ]
+    }
+  ]
+}

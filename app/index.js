@@ -1166,7 +1166,7 @@ var Search = React.createClass({displayName: "Search",
                     React.createElement("div", {className: "pull-left search-group-section"}, 
                         React.createElement("div", {className: "input-group input-group-lg search-group"}, 
                             React.createElement("span", {className: "hiddenSearch"}), 
-                            React.createElement("input", {type: "text", id: "productSearchBar", className: "form-control productSearchBar productSearchBarWidth", placeholder: "Search products"})
+                            React.createElement("input", {onChange: this.handleChange, value: this.state.searchString, type: "text", id: "productSearchBar", className: "form-control productSearchBar productSearchBarWidth", placeholder: "Search products"})
                         )
                     )
                 ), 

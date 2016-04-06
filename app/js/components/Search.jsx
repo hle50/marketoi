@@ -38,7 +38,7 @@ var Search = React.createClass({
                     <div className="pull-left search-group-section">
                         <div className="input-group input-group-lg search-group">
                             <span className="hiddenSearch"></span>
-                            <input type="text" id="productSearchBar" className="form-control productSearchBar productSearchBarWidth" placeholder="Search products" />
+                            <input onChange={this.handleChange} value={this.state.searchString} type="text" id="productSearchBar" className="form-control productSearchBar productSearchBarWidth" placeholder="Search products" />
                         </div>
                     </div>
                 </div>
